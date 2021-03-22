@@ -77,7 +77,18 @@ Available for the __Custom Script__ type.
 
 Enter a code of a Kotlin script.
 
-If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. See [Kotlin Help](https://github.com/Kotlin/KEEP/blob/master/proposals/scripting-support.md#kotlin-main-kts) for details.
+If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. For example
+
+```Kotlin
+@file:Repository("https://mvnrepository.com")
+@file:DependsOn("com.google.code.gson:gson:2.8.6")
+import com.google.gson.Gson
+
+...
+
+```
+
+See [Kotlin Help](https://github.com/Kotlin/KEEP/blob/master/proposals/scripting-support.md#kotlin-main-kts) for details.
 
 </td>
 
