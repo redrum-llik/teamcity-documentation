@@ -134,8 +134,8 @@ Select JDK to run the script:
 * Custom: enter a path to a JDK installed on the agent.
 * Select any installed version by number.
 
->If you use Java 9 or later and Kotlin 1.4.2 or later, you might get the following warning in the build log:
-> `An illegal reflective access operation has occurred`
+>If you use Java 9 or later and Kotlin 1.4.2 or later, you might get the following warning in the build log:  
+> `An illegal reflective access operation has occurred`  
 > This is caused by a known issue of the Kotlin compiler and will not affect your build anyhow. The details of the issue and its workaround are described [here](https://youtrack.jetbrains.com/issue/TW-70604#focus=Comments-27-4763145.0-0).
 {type="warning"}
 
