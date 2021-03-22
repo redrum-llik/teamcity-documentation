@@ -5,7 +5,7 @@ The _Kotlin Script_ runner allows executing a [Kotlin](https://kotlinlang.org/) 
 
 >This runner is a part of TeamCity 2021.1 Early Access Program.
 
-Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings.
 
 ## Prerequisites
 
@@ -71,11 +71,13 @@ Kotlin script
 
 </td>
 
-<td>
+<td id="custom-script" auxiliary-id="kotlin-custom-script">
 
 Available for the __Custom Script__ type.
 
 Enter a code of a Kotlin script.
+
+If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. See [Kotlin Help](https://github.com/Kotlin/KEEP/blob/master/proposals/scripting-support.md#kotlin-main-kts) for details.
 
 </td>
 
@@ -95,7 +97,7 @@ Available for the __Script File__ type.
 
 Enter a path to the script file, relative to the [build checkout directory](build-checkout-directory.md).
 
-If you want to extend the script's functionality with external libraries, you can use annotation-based references to Maven dependencies. To support this, the provided file must have the `.main.kts` extension (see [Kotlin Help](https://github.com/Kotlin/KEEP/blob/master/proposals/scripting-support.md#kotlin-main-kts) for details).
+To support [annotation-based references](#custom-script), the provided file must have the `.main.kts` extension.
 
 </td>
 
@@ -113,7 +115,7 @@ Script parameters
 
 Enter the parameters of the script, as in the command line. [Parameter references](configuring-build-parameters.md#parameter-reference) are supported.
 
->We highly recommend that you use parameter references to pass access tokens and other secure values into the script. This will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, they will be stored on the agent machine as long as the script itself if stored, which might compromise the security of your data.
+>We highly recommend that you use parameter references here to pass access tokens and other secure values into the script. This will ensure that these values are available on the agent only during the build. Otherwise, if the parameters are specified directly inside the script, their resolved values will be stored on the agent machine as long as the script itself if stored, which might compromise the security of your data.
 
 </td>
 
