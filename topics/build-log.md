@@ -15,6 +15,10 @@ You can download a full build log in the textual form or as a `.zip` archive  fr
 
 <anchor name="BuildLog-LargeBuildLogsInspection"/>
 
+## Customizing the log output
+
+[Service messages](service-messages.md#Reporting+Messages+for+Build+Log) feature allows to modify the log output in a variety of ways, such as grouping the messages in blocks, handling multiple parallel message flows, or controlling the severity of log message. 
+
 ## Build Log Size
 
 It is recommended to keep the build log small and tune build scripts not to print too much into the output. Large build logs are hard to view in the browser and are loading TeamCity infrastructure piping build messages from the agent to the server while the build is running.
